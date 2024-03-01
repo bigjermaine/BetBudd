@@ -16,6 +16,8 @@ class CloudKitViewModel: ObservableObject {
     @Published var name:String = ""
     @Published var name2:String = ""
     @Published var tip:String = ""
+    @Published var percentage:String = "0.0"
+    @Published var percentage2:String = "0.0"
     @Published var moreTip:String = ""
     @Published var image    :String = ""
     @Published var winLoseimage    :String = ""
@@ -55,6 +57,9 @@ class CloudKitViewModel: ObservableObject {
         newfruit["moreTip"] = moreTip
         newfruit["image"] = image
         newfruit["winImage"] = winLoseimage
+        newfruit["percent"] = percentage
+        newfruit["percent2"] = percentage2
+       
         saveItems(ck: newfruit)
         DispatchQueue.main.async {[weak self] in
             self?.fetchItems()
@@ -64,6 +69,8 @@ class CloudKitViewModel: ObservableObject {
             self?.moreTip = ""
             self?.image = ""
             self?.winLoseimage = ""
+            self?.percentage = ""
+            self?.percentage2 = ""
         }
         
     }
@@ -80,8 +87,6 @@ class CloudKitViewModel: ObservableObject {
     
     private func saveItems(ck:CKRecord) {
         CKContainer.default().publicCloudDatabase.save(ck) {[weak self] returnRecord, returnError in
-            print(returnRecord)
-            print(returnError)
             DispatchQueue.main.async {
                 self?.name = ""
             }
@@ -161,12 +166,14 @@ class CloudKitViewModel: ObservableObject {
                           let tip = record["tip"] as? String,
                           let moreTip = record["moreTip"] as? String,
                           let winImage =  record["winImage"] as? String,
+                          let percent = record["percent"] as? String,
+                          let percent2 = record["percent2"] as? String,
                           let imageTip = record["image"] as? String else {
                         return
                     }
 
                     DispatchQueue.main.async {
-                        let fruitModel = BetBudd.Tips(FirstPlayer: name, SecondPlayer: name2, WinOrLoseImage: winImage, WinSelection: tip, MoreTips: moreTip, gameImage: imageTip, record: record)
+                        let fruitModel = BetBudd.Tips(FirstPlayer: name, SecondPlayer: name2, WinOrLoseImage: winImage, WinSelection: tip, MoreTips: moreTip, gameImage: imageTip, percentageWin:  percent, SecondPlayerpercentageWin: percent2, record: record)
                         returnedItems.append(fruitModel)
                     }
                 case .failure(let error):
@@ -239,7 +246,7 @@ class CloudKitViewModel: ObservableObject {
         let fruit = Tips[index]
         let record = fruit.record
         CKContainer.default().publicCloudDatabase.delete(withRecordID: record.recordID) {[weak self]  returnedRecord, returnedError in
-            print(returnedError)
+            print(returnedError?.localizedDescription)
             DispatchQueue.main.async {
                 self?.Tips.remove(at: index)
             }

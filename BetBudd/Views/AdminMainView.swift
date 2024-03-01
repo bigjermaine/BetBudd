@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct AdminMainView: View {
+    @StateObject private var vm = CloudKitViewModel()
+  
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            DeleteList()
+                .environmentObject(vm)
+                .tabItem {
+                    Label("Home", systemImage: "gamecontroller.fill")
+                }
+              
+             PredicationEntryView()
+                .environmentObject(vm)
+                .tabItem {
+                    Label("Transactions", systemImage: "chart.xyaxis.line")
+                }
+        }
     }
 }
 

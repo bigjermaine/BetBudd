@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+
+class AdminViewModel:ObservableObject {
+  @Published  var password:String = ""
+  @Published  var email:String = ""
+  @Published  var error:Bool = false
+   @Published  var showScreen:Bool = false
+    
+    func login() {
+        if email ==  "danieljermaine12345@gmail.com" && password == "12345" {
+            UserDefaults.standard.set(true, forKey: "Signed_In")
+            UserDefaults.standard.set(true, forKey: "adminView")
+            showScreen = true
+        }else{
+            error = true
+        }
+    }
+}

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+//Note: CoreData Constants
+
+let BettingCoreData = "UserDataEntity"

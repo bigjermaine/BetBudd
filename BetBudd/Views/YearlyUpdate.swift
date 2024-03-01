@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct YearlyUpdate: View {
+    @AppStorage(YearlyBudget ) var yearlyBudget = 0.0
+    @State private var dataSavedPresented = false
+    @State private var newYearlyBudget = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center){
+            Text("Add Yearly Budget")
+                .font(.largeTitle)
+            HStack {
+                TextField(String(yearlyBudget), text: $newYearlyBudget).textFieldStyle(.roundedBorder).keyboardType(.numberPad)
+                Button("Save") {
+                    if newYearlyBudget.isEmpty == false {
+                        yearlyBudget = newYearlyBudget.toDouble() ?? 0.0
+                        newYearlyBudget = ""
+                        dataSavedPresented  = true
+                    }
+                }.buttonStyle(.bordered)
+            }
+        }
+        .padding()
+        .alert("Yearly Target Saved", isPresented: $dataSavedPresented, actions: {
+        })
     }
 }
 

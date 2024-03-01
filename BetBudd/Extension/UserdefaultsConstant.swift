@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+//Note:UserDefaults or AppStorage Constants
+let UserName  = "UserName"
+let Twitter  = "Twitter"
+let Email =  "EMail"
+let YearlyBudget = "YearlyBudget"
+

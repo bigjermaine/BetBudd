@@ -7,9 +7,9 @@
 
 import Foundation
 
-class MessagesData {
+class MessagesDataManager {
     
-    static let shared = MessagesData()
+    static let shared =  MessagesDataManager()
     
     
     let motivationalMessages = [

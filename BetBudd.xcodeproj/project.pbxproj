@@ -10,6 +10,7 @@
 		5C96DE4D5F5258CD72B74B4B /* Pods_BetBudd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41871265ACFEEE6FDDC29A17 /* Pods_BetBudd.framework */; };
 		D012FD932AFB59FA0066FCA9 /* ProfitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D012FD922AFB59FA0066FCA9 /* ProfitTracker.swift */; };
 		D012FD992AFBB2E20066FCA9 /* OldProfitCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D012FD982AFBB2E20066FCA9 /* OldProfitCalculator.swift */; };
+		D046B5872B94537500A4FEFD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046B5862B94537500A4FEFD /* ChartView.swift */; };
 		D067D8D12B0FBC37002EE30E /* DeleteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D067D8D02B0FBC37002EE30E /* DeleteList.swift */; };
 		D067D8D32B0FBE5F002EE30E /* PredictionDetails2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D067D8D22B0FBE5F002EE30E /* PredictionDetails2.swift */; };
 		D067D8D52B0FBF58002EE30E /* AdminMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D067D8D42B0FBF58002EE30E /* AdminMainView.swift */; };
@@ -91,6 +92,7 @@
 		D012FD922AFB59FA0066FCA9 /* ProfitTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitTracker.swift; sourceTree = "<group>"; };
 		D012FD982AFBB2E20066FCA9 /* OldProfitCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldProfitCalculator.swift; sourceTree = "<group>"; };
 		D012FD9A2AFC89CF0066FCA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D046B5862B94537500A4FEFD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		D067D8D02B0FBC37002EE30E /* DeleteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteList.swift; sourceTree = "<group>"; };
 		D067D8D22B0FBE5F002EE30E /* PredictionDetails2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionDetails2.swift; sourceTree = "<group>"; };
 		D067D8D42B0FBF58002EE30E /* AdminMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				D0CC1DE32AF7473E00B0136E /* AboutView.swift */,
 				D0CC1DE52AF747B600B0136E /* PasswordView.swift */,
 				D0CC1DE72AF7483A00B0136E /* UpdateUserProfile.swift */,
+				D046B5862B94537500A4FEFD /* ChartView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				D087D8532B70AA90003D40B3 /* SettingsView.swift in Sources */,
 				D067D8D32B0FBE5F002EE30E /* PredictionDetails2.swift in Sources */,
 				D06D16C22AD15BF900B25CC7 /* ContentView.swift in Sources */,
+				D046B5872B94537500A4FEFD /* ChartView.swift in Sources */,
 				D06D16C02AD15BF900B25CC7 /* BetBuddApp.swift in Sources */,
 				D0CC1DEA2AF7489500B0136E /* NotificationManager.swift in Sources */,
 				D067D8D12B0FBC37002EE30E /* DeleteList.swift in Sources */,

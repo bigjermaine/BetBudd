@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PredicationEntryView: View {
     @EnvironmentObject var vm:CloudKitViewModel
+    @State var errorText:String = "Error enter all fields"
     @State var showFullScreen:Bool = false
     var body: some View {
         ZStack {
@@ -50,7 +51,8 @@ struct PredicationEntryView: View {
                                 .cornerRadius(10)
                                 .autocapitalization(.none)
                                 .autocorrectionDisabled()
-                            Text("MoreTips")
+                            
+                            Text("Description About Tips")
                                 .fontWeight(.semibold)
                                 .font(.title)
                             TextField("MoreTips", text: $vm.moreTip)
@@ -159,10 +161,13 @@ struct PredicationEntryView: View {
                         VStack(spacing:40){
                             Button{
                                 vm.addItem()
+                                errorText = "Tips Uploaded"
+                                vm.error2 = true
                             }label: {
-                                Text("add")
+                                Text("Upload Tips")
                                     .bold()
-                                    .frame(width: 40, height: 50)
+                                    .padding()
+                                    .frame(height: 50)
                                     .foregroundColor(.black)
                                     .background(Color.red)
                                     .cornerRadius(10)
@@ -171,9 +176,12 @@ struct PredicationEntryView: View {
                             
                             Button{
                                 vm.addItem2()
+                                errorText = "Notification Has Been Sent To Users About The Newly Added Tips"
+                                vm.error2 = true
                             }label: {
-                                Text("TipsAdded")
+                                Text("Send Notification")
                                     .bold()
+                                    .padding()
                                     .frame(height: 50)
                                     .foregroundColor(.black)
                                     .background(Color.red)
@@ -195,7 +203,7 @@ struct PredicationEntryView: View {
                 }
              }
         .alert(isPresented: $vm.error2) {
-            Alert(title: Text("Enter all fields"))
+            Alert(title: Text(errorText))
         }
         
         .fullScreenCover(isPresented: $showFullScreen, content: {
@@ -207,8 +215,11 @@ struct PredicationEntryView: View {
 
 
 struct PredicationEntryView_Previews: PreviewProvider {
+   
     static var previews: some View {
+        let vm  = CloudKitViewModel()
         PredicationEntryView()
+            .environmentObject(vm)
            
            
     }

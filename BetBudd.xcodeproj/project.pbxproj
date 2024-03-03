@@ -373,7 +373,6 @@
 				D0F01C812B0BCC4100DAF215 /* Predication.swift */,
 				D0F01C872B0D382E00DAF215 /* PredictionDetails.swift */,
 				D067D8D22B0FBE5F002EE30E /* PredictionDetails2.swift */,
-				D0F01CB62B0E6F8900DAF215 /* PredicationEntryView.swift */,
 			);
 			name = Prediction;
 			sourceTree = "<group>";
@@ -390,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				D067D8D02B0FBC37002EE30E /* DeleteList.swift */,
+				D0F01CB62B0E6F8900DAF215 /* PredicationEntryView.swift */,
 				D067D8D42B0FBF58002EE30E /* AdminMainView.swift */,
 				D07B65362B5041A900CA250C /* AdminLoginView.swift */,
 			);

@@ -6,7 +6,7 @@
 //
 import SwiftUI
 import AVFoundation
-
+import GoogleMobileAds
 extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -45,7 +45,7 @@ struct MiniGameView: View {
     @State private var playerBalance = 5000.0
     @State private var Playerhealth = 0.0
     @State private var playerDieSum = 0
-    
+    @State var interstitial: GADInterstitialAd?
     @State private var playerArray = ["square", "die.face.1", "die.face.2", "die.face.3", "die.face.4", "die.face.5", "die.face.6"]
     
     @State private var cpuArray = ["square", "die.face.1", "die.face.2", "die.face.3", "die.face.4", "die.face.5", "die.face.6"]
@@ -111,7 +111,16 @@ struct MiniGameView: View {
             Spacer()
           
         }
+        .onAppear{
+            loadInterstitialAd()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+             self.showad()
+            }
+            
+        }
+    
     }
+    
     func playGame() {
         
         if gamePhase == 1 {
@@ -264,6 +273,33 @@ struct MiniGameView: View {
             gamePhase = 1
         }
     }
+      
+    func showad() {
+        if let interstitial = interstitial {
+            // Show the interstitial ad
+            let root = UIApplication.shared.windows.first?.rootViewController
+            interstitial.present(fromRootViewController: root!)
+        } else {
+            print("Ad not ready yet. Please try again later.")
+        }
+    }
+
+    
+    func loadInterstitialAd() {
+            let adUnitID = "ca-app-pub-4916382790527707/6536656010"
+            let request = GADRequest()
+            GADInterstitialAd.load(
+                withAdUnitID: adUnitID,
+                request: request
+            ) { (ad, error) in
+                if let error = error {
+                    print("Failed to load interstitial ad: \(error.localizedDescription)")
+                    return
+                }
+                self.interstitial = ad
+            }
+        }
+
 }
 
 struct MiniGameView_Previews: PreviewProvider {

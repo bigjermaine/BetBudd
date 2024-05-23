@@ -73,6 +73,8 @@ struct SettingsView: View {
                     Text(("\(yearlyBudget)").currencyFormatting())
                         .frame(maxWidth:120,alignment:.leading)
                 }
+                
+                
                 HStack {
                     NavigationLink("Password randomizer     \(Image(systemName: "key.fill"))", destination: PasswordView())
                         .foregroundColor(.blue)
@@ -82,8 +84,22 @@ struct SettingsView: View {
                     NavigationLink("Mini game    \(Image(systemName: "gamecontroller.fill"))", destination: MiniGameView())
                         .foregroundColor(.blue)
                 }
-                
-          
+                HStack {
+                    Link("Join Twitter", destination: URL(string: "https://x.com/betbudd1?s=21")!)
+                  
+                }
+                .foregroundColor(animmate ? Color.red : Color.accentColor)
+                .scaleEffect(animmate ? 1.1:1.0)
+                HStack {
+                    Link("Join Telegram", destination: URL(string: "https://t.me/+Ln4PHOXNdt4wNmM8")!)
+                    Image("AppIcon")
+                        .resizable()
+                        .frame(width: 25,height: 25)
+                    Spacer()
+                  
+                }
+                .foregroundColor(animmate ? Color.red : Color.accentColor)
+                .scaleEffect(animmate ? 1.1:1.0)
                 if inAppPurchase.checkpurchase ?? false {
                     Text("Thanks for the coffee")
                         .font(.callout)
@@ -93,9 +109,8 @@ struct SettingsView: View {
                 HStack {
                     Spacer()
                     VStack{
-                        
-                        Text("Buy the developer a")
-                        Text(inAppPurchase.myProduct?.productIdentifier ?? "")
+        
+                        Text(inAppPurchase.myProduct?.localizedDescription ?? "")
                             .bold()
                             .foregroundColor(.brown)
                           Button{

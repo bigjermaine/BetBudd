@@ -17,7 +17,11 @@ struct MainTabbar: View {
                 .environmentObject(bettingDataModel)
                 .tabItem {
                     Label("Home", systemImage: "gamecontroller.fill")
+                       
+                        
+                     
                 }
+               
                 .onTapGesture {
                     hideKeyboard()
                 }

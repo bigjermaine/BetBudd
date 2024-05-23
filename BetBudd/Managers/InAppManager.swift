@@ -24,11 +24,11 @@ class InAppManager:NSObject, SKProductsRequestDelegate,SKPaymentTransactionObser
     }
     
     func checkPurchse() {
-        checkpurchase = UserDefaults.standard.bool(forKey: "Coffee")
+        checkpurchase = UserDefaults.standard.bool(forKey: "com.betbudd.coffee")
     }
 
     func fetchProducts() {
-        let request = SKProductsRequest(productIdentifiers: ["Coffee"])
+        let request = SKProductsRequest(productIdentifiers: ["com.betbudd.coffee"])
         request.delegate = self
         request.start()
     }
@@ -73,22 +73,28 @@ class InAppManager:NSObject, SKProductsRequestDelegate,SKPaymentTransactionObser
         for transaction in transactions {
             switch transaction.transactionState{
             case .purchasing:
-                UserDefaults.standard.set(true, forKey: "Coffee")
+              //  UserDefaults.standard.set(true, forKey: "com.betbudd.coffee")
                 checkPurchse()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 SKPaymentQueue.default().remove(self)
             case .purchased:
                 SKPaymentQueue.default().finishTransaction(transaction)
+              //  UserDefaults.standard.set(true, forKey: "com.betbudd.coffee")
+                checkPurchse()
                 SKPaymentQueue.default().remove(self)
             case .failed:
+               // UserDefaults.standard.set(false, forKey: "com.betbudd.coffee")
+                checkPurchse()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 SKPaymentQueue.default().remove(self)
             case .restored:
-                UserDefaults.standard.set(true, forKey: "Coffee")
+                //UserDefaults.standard.set(true, forKey: "com.betbudd.coffee")
+                checkPurchse()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 SKPaymentQueue.default().remove(self)
             case .deferred:
                 SKPaymentQueue.default().finishTransaction(transaction)
+                checkPurchse()
                 SKPaymentQueue.default().remove(self)
             @unknown default:
                 print("")

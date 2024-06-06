@@ -105,36 +105,36 @@ struct SettingsView: View {
                         .font(.callout)
                 }
             
-            VStack{
-                HStack {
-                    Spacer()
-                    VStack{
-        
-                        Text(inAppPurchase.myProduct?.localizedDescription ?? "")
-                            .bold()
-                            .foregroundColor(.brown)
-                          Button{
-                              inAppPurchase.didTapBuy()
-                          }label: {
-                              VStack{
-                                  Image("coffee")
-                                      .resizable()
-                                      .aspectRatio(contentMode: .fill)
-                                      .frame(width: 100,height: 50)
-                                      .cornerRadius(4)
-                                  Text(inAppPurchase.producePrice ?? "")
-                                      .foregroundColor(.brown)
-                              }
-                          }
-                      }
-                     .opacity( inAppPurchase.checkpurchase ?? false ? 0: 1)
-                   
-                     Spacer()
-                }
-                Spacer()
-            }
-           
-            .frame(height: inAppPurchase.checkpurchase ?? false ? 0: 200)
+//            VStack{
+//                HStack {
+//                    Spacer()
+//                    VStack{
+//
+//                        Text(inAppPurchase.myProduct?.localizedDescription ?? "")
+//                            .bold()
+//                            .foregroundColor(.brown)
+//                          Button{
+//                              inAppPurchase.didTapBuy()
+//                          }label: {
+//                              VStack{
+//                                  Image("coffee")
+//                                      .resizable()
+//                                      .aspectRatio(contentMode: .fill)
+//                                      .frame(width: 100,height: 50)
+//                                      .cornerRadius(4)
+//                                  Text(inAppPurchase.producePrice ?? "")
+//                                      .foregroundColor(.brown)
+//                              }
+//                          }
+//                      }
+//                     .opacity( inAppPurchase.checkpurchase ?? false ? 0: 1)
+//
+//                     Spacer()
+//                }
+//                Spacer()
+//            }
+//           
+//            .frame(height: inAppPurchase.checkpurchase ?? false ? 0: 200)
           
         }
       

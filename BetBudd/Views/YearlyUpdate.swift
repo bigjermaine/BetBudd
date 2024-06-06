@@ -32,6 +32,6 @@ struct YearlyUpdate: View {
     }
 }
 
-#Preview {
-    YearlyUpdate()
-}
+//#Preview {
+//    YearlyUpdate()
+//}

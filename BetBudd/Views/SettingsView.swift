@@ -85,13 +85,12 @@ struct SettingsView: View {
                         .foregroundColor(.blue)
                 }
                 HStack {
-                    Link("Join Twitter", destination: URL(string: "https://x.com/betbudd1?s=21")!)
-                  
+                    Link("Join Twitter", destination: URL(string: SocialMediaLinks.twitter)!)
                 }
                 .foregroundColor(animmate ? Color.red : Color.accentColor)
                 .scaleEffect(animmate ? 1.1:1.0)
                 HStack {
-                    Link("Join Telegram", destination: URL(string: "https://t.me/+Ln4PHOXNdt4wNmM8")!)
+                    Link("Join Telegram", destination: URL(string: SocialMediaLinks.telegram )!)
                     Image("AppIcon")
                         .resizable()
                         .frame(width: 25,height: 25)

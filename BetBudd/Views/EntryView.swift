@@ -113,7 +113,7 @@ struct EntryView: View {
             }
             Spacer()
             VStack {
-                       AdBannerView(adUnitID: "ca-app-pub-4916382790527707/1575139226") // Replace with your ad unit ID
+                AdBannerView(adUnitID: Ads.entryLevelUID) // Replace with your ad unit ID
                            .frame(height: 50)
             
                    }

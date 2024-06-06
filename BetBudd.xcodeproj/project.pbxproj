@@ -63,6 +63,7 @@
 		D0F01CBC2B0EA9B200DAF215 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F01CBB2B0EA9B200DAF215 /* OnboardingScreen.swift */; };
 		D0F01CBE2B0F3C8C00DAF215 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F01CBD2B0F3C8B00DAF215 /* GoogleService-Info.plist */; };
 		F9679F612C11F0DF00A7357B /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9679F602C11F0DF00A7357B /* Links.swift */; };
+		F9679F632C11F33300A7357B /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9679F622C11F33300A7357B /* Ads.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,7 @@
 		D0F01CD22B0F451900DAF215 /* BetBudd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetBudd.entitlements; sourceTree = "<group>"; };
 		F148E1CB3634BA13E31327B2 /* Pods-BetBudd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetBudd.debug.xcconfig"; path = "Target Support Files/Pods-BetBudd/Pods-BetBudd.debug.xcconfig"; sourceTree = "<group>"; };
 		F9679F602C11F0DF00A7357B /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		F9679F622C11F33300A7357B /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B826392AEC279100192E5D /* Extension.swift */,
+				F9679F622C11F33300A7357B /* Ads.swift */,
 				F9679F602C11F0DF00A7357B /* Links.swift */,
 				D0CC1DFB2AF74C3B00B0136E /* UserdefaultsConstant.swift */,
 				D0CC1E082AF7F57F00B0136E /* CoreDataConstants.swift */,
@@ -540,6 +543,7 @@
 				D0F01CB32B0E319200DAF215 /* Tips.swift in Sources */,
 				D012FD932AFB59FA0066FCA9 /* ProfitTracker.swift in Sources */,
 				D067D8D52B0FBF58002EE30E /* AdminMainView.swift in Sources */,
+				F9679F632C11F33300A7357B /* Ads.swift in Sources */,
 				D0CC1DFF2AF753A500B0136E /* BettingSaved.swift in Sources */,
 				D0AB88022AF8414B00AB5A9C /* MotivationalManager.swift in Sources */,
 				D0CC1E152AF8219C00B0136E /* ContainerView.swift in Sources */,

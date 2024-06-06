@@ -23,7 +23,7 @@ struct DeleteList: View {
                         .italic()
                 }
                 Spacer()
-                    AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716") // Replace with your ad unit ID
+                AdBannerView(adUnitID: Ads.deleteListUID) // Replace with your ad unit ID
                         .frame(height: 50)
                     
             }

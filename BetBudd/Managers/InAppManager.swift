@@ -15,7 +15,7 @@ class InAppManager:NSObject, SKProductsRequestDelegate,SKPaymentTransactionObser
         super.init()
     
         checkPurchse()
-        self.fetchProducts()
+        fetchProducts()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.fetchPriceLocal()
         }

@@ -15,12 +15,6 @@ class AdminViewModel:ObservableObject {
    @Published  var showScreen:Bool = false
     
     func login() {
-        if email ==  "danieljermaine12345@gmail.com" && password == "12345" {
-            UserDefaults.standard.set(true, forKey: "Signed_In")
-            UserDefaults.standard.set(true, forKey: "adminView")
-            showScreen = true
-        }else{
-            error = true
-        }
+        
     }
 }

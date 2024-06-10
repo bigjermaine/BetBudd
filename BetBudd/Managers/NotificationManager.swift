@@ -53,19 +53,15 @@ class  NotificationManager {
         
         let calendar = Calendar.current
         let now = Date()
-      
         // Get the next message
         content.body = notificationBody ?? ""
-       
         var dateComponents = DateComponents()
-        dateComponents.hour = 9
-        dateComponents.minute = 59
+        dateComponents.hour = 11
+        dateComponents.minute = 37
         dateComponents.day = calendar.component(.day, from: now)
         if let nextDate = calendar.date(from: dateComponents) {
             let trigger = UNCalendarNotificationTrigger(dateMatching: calendar.dateComponents([.hour, .minute], from: nextDate), repeats: true)
-            
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            
+            let request = UNNotificationRequest(identifier: "Notification1", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { error in
                 if let error = error {
                     print("Error scheduling notification: \(error)")
@@ -85,7 +81,7 @@ class  NotificationManager {
         
             if let currentDay = Int(dayFormatter.string(from: currentDate)) {
             
-            var storedNumber = UserDefaults.standard.integer(forKey: "dailyNumber")
+             var storedNumber = UserDefaults.standard.integer(forKey: "dailyNumber")
         
             if currentDay != UserDefaults.standard.integer(forKey: "lastStoredDay") {
                 if totalMessages.count <= storedNumber {
@@ -93,7 +89,8 @@ class  NotificationManager {
                     UserDefaults.standard.set(currentDay, forKey: "lastStoredDay")
                     UserDefaults.standard.set(storedNumber, forKey: "dailyNumber")
                 }
-             
+            }else {
+               
             }
            } else {
             print("Error extracting the current day.")
@@ -102,7 +99,6 @@ class  NotificationManager {
     
     func getStoredNumber() -> Int {
         let storedNumber = UserDefaults.standard.integer(forKey: "dailyNumber")
-        print(storedNumber)
         return storedNumber
      }
     

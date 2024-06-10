@@ -55,6 +55,7 @@ struct MainTabbar: View {
             NotificationManager.instance.extract()
             NotificationManager.instance.requestauthoriztionCloud()
             HapticManager.shared.vibrateForSelection()
+            NotificationManager.instance.requestauthoriztion()
          }
         
     }

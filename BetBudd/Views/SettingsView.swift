@@ -150,7 +150,7 @@ struct SettingsView: View {
         
         .onAppear {
             if !checkNotifcation {
-                NotificationManager.instance.requestauthoriztion()
+               // NotificationManager.instance.requestauthoriztion()
             }
             addAnimation()
             UIApplication.shared.applicationIconBadgeNumber = 0
